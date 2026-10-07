@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tariq Sadiq | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HOME / PORTFOLIO -->
+  <main id="home" class="page active">
+    <header class="navbar">
+      <div class="logo">Tariq</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a href="#login">Log in</a>
+        <a href="#signup">Sign up</a>
+        <a href="#blog">Blog</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <img src="Screenshot from 2026-09-18 11-25-37.png" alt="" class="profile-photo photo-placeholder" aria-label="Tariq Sadiq">
+      <div class="hero-text">
+        <p>Hello,</p>
+        <h1>I'm Tariq Sadiq</h1>
+        <h2>Web Developer &amp; Designer</h2>
+        <p class="small">Learning and creating modern digital experiences.</p>
+      
+        <a class="btn" href="#projects">Download CV</a>
+      </div>
+      <div class="socials">
+        <span>◎</span><span>𝕏</span><span>▶</span><span>f</span>
+      </div>
+    </section>
+
+    <section id="about" class="about section">
+      <div class="side-label">Tariq Sadiq<br><small>Web Developer &amp; Designer</small></div>
+      <div class="about-card">
+        <h2>About me</h2>
+        <p>I am a beginner web developer and UI/UX designer interested in creating clean, simple and useful digital experiences.</p>
+        <p>I'm Tarig a Web developer and designer</p>
+        <p> I,m always Excited to grow my Skills.</p>
+        <div class="education">
+          <span class="icon">🎓</span>
+          <div>
+            <strong>University</strong>
+            <p>Al-Imam Al-Mahdi University<br>Arts &amp; Humanities</p>
+          </div>
+        </div>
+      </div>
+      <image src ="Screenshot from 2026-09-18 11-25-37.png"alt="Profile image" class="profile-image"></div>
+    </section>
+
+    <section id="projects" class="projects-section">
+      <div class="projects-shell">
+        <div class="projects-header">
+          <div class="projects-icon" aria-label="Analytics icon">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <h2>My Project</h2>
+        </div>
+
+        <div class="projects-grid">
+          <a class="project-card project-card--feature" href="#home" aria-label="Build Your Dream Website project">
+            <div class="project-label">personal</div>
+            <h3>
+              <span>Build Your Dream</span>
+              <span>Website</span>
+            </h3>
+
+            <div class="project-visual">
+              <div class="laptop">
+                <img src="Screenshot from 2026-10-04 18-26-41.png" alt="Apple laptop illustration" class="apple-laptop-image" />
+              </div>
+
+              <div class="floating-icons">
+                <span class="icon-box red"></span>
+                <span class="icon-box green"></span>
+              </div>
+            </div>
+
+            <div class="project-caption">My own website designer</div>
+          </a>
+
+          <a class="project-card project-card--calculator" href="#home" aria-label="Mortgage Calculator project">
+            <div class="calculator-box">
+              <div class="calculator-panel">
+                <h3>
+                  <span>Mortgage</span>
+                  <span>Calculator</span>
+                </h3>
+                <label for="loanAmount">Loan Amount</label>
+                <div class="currency-field">
+                  <span>$</span>
+                  <input id="loanAmount" type="text" value="300,000" aria-label="Loan amount" />
+                </div>
+                <button type="button" class="calculator-button">Calculator</button>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="bottom-shape" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills section">
+      <h2>Skills</h2>
+      <div class="skill-list">
+        <span>HTML</span>
+        <span>Microsoft Office</span>
+        <span>CSS</span>
+        <span>vS Code</span>
+        <span>Js</span>
+        <span>git hub</span>
+        <span>Figma</span>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section">
+      <h2>Contact</h2>
+      <p>Get in touch with me</p>
+      <p><a href="mailto:Tarighibtlh@email.com">Tarighibtlh@email.com</a></p>
+      <p><a href="tel:+250794395242">+250 794 395 242</a></p>
+      <p><a href="https://wa.me/250794395242" target="_blank" rel="noopener">WhatsApp</a></p>
+      <p><a href="https://www.instagram.com/Tarighibtlh/" target="_blank" rel="noopener">Instagram</a></p>
+    </section>
+  </main>
+
+  <!-- LOGIN -->
+  <main id="login" class="auth-page page">
+    <div class="auth-card">
+      <image src="Screenshot from 2026-09-18 11-25-37.png">
+      <h1><span>♟</span> Welcome Back</h1>
+
+      <form id="loginForm">
+        <label for="loginEmail">email <span>Email</span></label>
+        <input id="loginEmail" type="email" placeholder="Email" required>
+
+        <label for="loginPassword">lock <span>Password</span></label>
+        <input id="loginPassword" type="password" placeholder="Password" required>
+
+        <a class="forgot" href="#">Forgot Password</a>
+
+        <button type="submit">Log in</button>
+      </form>
+
+      <div class="or"><span></span>Or<span></span></div>
+      <div class="social-login">
+        <button type="button">G</button>
+        <button type="button">Q</button>
+      </div>
+
+      <p class="switch">Don't have an account? <a href="#signup">Sign up</a></p>
+      <a class="back" href="#home">← Back to portfolio</a>
+    </div>
+  </main>
+
+  <!-- SIGN UP -->
+  <main id="signup" class="auth-page page">
+    <div class="auth-card signup-card">
+      <h1>Create Account</h1>
+      <p class="subtitle">Create your account to get started.</p>
+
+      <form id="signupForm">
+        <label for="name">user <span>Full Name</span></label>
+        <input id="name" type="text" placeholder="Full Name" required>
+
+        <label for="signupEmail">email <span>Email</span></label>
+        <input id="signupEmail" type="email" placeholder="Email" required>
+
+        <label for="signupPassword">Lock <span>Password</span></label>
+        <input id="signupPassword" type="password" placeholder="Password" minlength="6" required>
+
+        <button type="submit">Sign up</button>
+      </form>
+
+      <p class="switch">Already have an account? <a href="#login">Log in</a></p>
+      <a class="back" href="#home">← Back to portfolio</a>
+    </div>
+  </main>
+
+  <!-- BLOG -->
+  <main id="blog" class="page">
+    <section class="blog-page">
+      <header class="blog-intro">
+        <h1>Welcome Back<br>Blog Club</h1>
+      </header>
+
+      <div class="blog-grid">
+        <article class="blog-card">
+          <img class="blog-image" src="Screenshot from 2026-09-25 18-05-05.png" alt="Workspace setup with UI/UX design materials">
+          <div class="blog-card-copy">
+            <h2>Learning UI/UX</h2>
+            <p>Learning how to create simple and user-friendly designs.</p>
+            <a href="#home">Read More</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <img class="blog-image" src="Screenshot from 2026-09-25 17-57-21.png" alt="Dark dashboard and Figma project design workspace">
+          <div class="blog-card-copy">
+            <h2>My Figma Journey</h2>
+            <p>My journey of learning Figma and creating new designs.</p>
+            <a href="#home">Read More</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="portfolio-band" aria-label="Portfolio examples">
+        <div class="portfolio-gallery">
+          <img src="Pasted image.png" alt="Creative poster layout with design elements">
+          <img src="WhatsApp Image 2026-09-11 at 2.14.00 PM.jpeg" alt="Poster-style design with soft color palette and branding notes">
+        </div>
+      </div>
+
+      <div class="portfolio-caption">
+        <h2>My Design Work</h2>
+        <p>Creating simple and creative designs using Figma.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
