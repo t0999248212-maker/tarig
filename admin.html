@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Tariq Portfolio</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+  <div class="admin-shell">
+    <aside class="admin-sidebar">
+      <div class="brand-block">
+        <div class="brand-badge">T</div>
+        <div>
+          <p class="eyebrow">Portfolio</p>
+          <h2>Tariq Admin</h2>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Sidebar navigation">
+        <a href="#overview" class="active">Overview</a>
+        <a href="#projects-panel">Projects</a>
+        <a href="#blog-panel">Blog Posts</a>
+        <a href="#messages-panel">Messages</a>
+      </nav>
+
+      <div class="sidebar-box">
+        <p>Live sync</p>
+        <strong>Firebase</strong>
+      </div>
+
+      <button id="logoutBtn" class="logout-btn" type="button">Log out</button>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        <div>
+          <p class="eyebrow accent">Admin Panel</p>
+          <h1>Welcome, <span id="adminName">Admin</span></h1>
+        </div>
+        <div class="header-badge">Portfolio control center</div>
+      </header>
+
+      <section id="overview" class="stats-grid">
+        <div class="stat-card">
+          <span>Projects</span>
+          <strong id="projectCount">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Blog Posts</span>
+          <strong id="blogCount">0</strong>
+        </div>
+        <div class="stat-card">
+          <span>Messages</span>
+          <strong id="messageCount">0</strong>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <div id="projects-panel" class="panel">
+          <div class="panel-header">
+            <h3>Projects</h3>
+          </div>
+
+          <form id="projectForm" class="admin-form">
+            <input id="projectTitle" type="text" placeholder="Project title" required>
+            <input id="projectCategory" type="text" placeholder="Category" required>
+            <textarea id="projectDescription" rows="3" placeholder="Project description" required></textarea>
+            <button type="submit">Add Project</button>
+          </form>
+
+          <div id="projectsList" class="item-list"></div>
+        </div>
+
+        <div id="blog-panel" class="panel">
+          <div class="panel-header">
+            <h3>Blog Posts</h3>
+          </div>
+
+          <form id="blogForm" class="admin-form">
+            <input id="blogTitle" type="text" placeholder="Blog title" required>
+            <input id="blogCategory" type="text" placeholder="Category" required>
+            <textarea id="blogContent" rows="3" placeholder="Blog content" required></textarea>
+            <button type="submit">Add Post</button>
+          </form>
+
+          <div id="blogList" class="item-list"></div>
+        </div>
+
+        <div id="messages-panel" class="panel full-width">
+          <div class="panel-header">
+            <h3>Messages from Website</h3>
+          </div>
+
+          <div id="messageList" class="item-list"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

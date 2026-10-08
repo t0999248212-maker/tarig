@@ -116,6 +116,15 @@ a {
   justify-content: center;
 }
 
+.auth-photo {
+  width: 100%;
+  height: 120px;
+  margin-bottom: 20px;
+  border-radius: 0;
+  object-fit: cover;
+  display: block;
+}
+
 .hero-text p {
   color: #ddd;
   margin-bottom: 5px;
@@ -227,13 +236,29 @@ a {
 
 .projects-section {
   background: #b9a5a7;
-  padding: 0;
-  margin-bottom: 34px;
+  padding: 18px 0 8px;
+  margin: 0 auto 26px;
+  width: 86%;
+  max-width: 1050px;
+  border-radius: 18px;
+  box-shadow: 0 12px 24px rgba(23, 27, 34, 0.08);
 }
 
 .skills {
-  margin-top: 0;
-  padding-top: 0;
+  margin: 0 auto 40px;
+  padding: 28px 24px 30px;
+  width: 86%;
+  max-width: 1050px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 10px 22px rgba(23, 27, 34, 0.06);
+  border: 1px solid rgba(31, 55, 98, 0.08);
+}
+
+.skills h2 {
+  margin-bottom: 18px;
+  text-align: center;
+  color: #1a1a1a;
 }
 
 .projects-shell {
@@ -613,6 +638,60 @@ a {
   margin-bottom: 12px;
 }
 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #4e7df0;
+  box-shadow: 0 0 0 3px rgba(78, 125, 240, 0.1);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #4e7df0, #3a5ec7);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 18px rgba(66, 109, 190, 0.28);
+}
+
+.contact-form button:hover {
+  transform: translateY(-1px);
+}
+
+.contact-info {
+  margin-top: 20px;
+}
+
 .contact-list {
   display: flex;
   flex-direction: row;
@@ -646,6 +725,21 @@ a {
   color: #666;
 }
 
+@media (max-width: 760px) {
+  .contact-shell {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .contact {
+    padding: 36px 18px;
+  }
+
+  .portfolio-message-form {
+    padding: 18px;
+  }
+}
+
 /* AUTH PAGES */
 .auth-page {
   display: none;
@@ -672,6 +766,9 @@ a {
   width: 100%;
   height: 120px;
   margin-bottom: 20px;
+  border-radius: 0;
+  object-fit: cover;
+  display: block;
 }
 
 .auth-card h1 {

@@ -21,6 +21,7 @@
         <a href="#login">Log in</a>
         <a href="#signup">Sign up</a>
         <a href="#blog">Blog</a>
+        <a href="admin.html">Admin</a>
       </nav>
     </header>
 
@@ -54,7 +55,7 @@
           </div>
         </div>
       </div>
-      <image src ="Screenshot from 2026-09-18 11-25-37.png"alt="Profile image" class="profile-image"></div>
+      <img src="Screenshot from 2026-09-18 11-25-37.png" alt="Profile image" class="profile-image">
     </section>
 
     <section id="projects" class="projects-section">
@@ -104,6 +105,7 @@
                   <input id="loanAmount" type="text" value="300,000" aria-label="Loan amount" />
                 </div>
                 <button type="button" class="calculator-button">Calculator</button>
+                <div class="calculator-result" id="calculatorResult">$300,000 / month</div>
               </div>
             </div>
           </a>
@@ -129,17 +131,24 @@
     <section id="contact" class="contact section">
       <h2>Contact</h2>
       <p>Get in touch with me</p>
-      <p><a href="mailto:Tarighibtlh@email.com">Tarighibtlh@email.com</a></p>
-      <p><a href="tel:+250794395242">+250 794 395 242</a></p>
-      <p><a href="https://wa.me/250794395242" target="_blank" rel="noopener">WhatsApp</a></p>
-      <p><a href="https://www.instagram.com/Tarighibtlh/" target="_blank" rel="noopener">Instagram</a></p>
+      <form id="contactForm" class="contact-form">
+        <input id="contactName" type="text" placeholder="Your name" required>
+        <input id="contactEmail" type="email" placeholder="Your email" required>
+        <textarea id="contactMessage" rows="5" placeholder="Your message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <p><a href="tel:+250794395242">+250 794 395 242</a></p>
+        <p><a href="https://wa.me/250794395242" target="_blank" rel="noopener">WhatsApp</a></p>
+        <p><a href="https://www.instagram.com/Tarighibtlh/" target="_blank" rel="noopener">Instagram</a></p>
+      </div>
     </section>
   </main>
 
   <!-- LOGIN -->
   <main id="login" class="auth-page page">
     <div class="auth-card">
-      <image src="Screenshot from 2026-09-18 11-25-37.png">
+      <img src="Screenshot from 2026-09-18 11-25-37.png" alt="Profile image" class="auth-photo">
       <h1><span>♟</span> Welcome Back</h1>
 
       <form id="loginForm">
@@ -230,6 +239,10 @@
     </section>
   </main>
 
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
