@@ -1,3 +1,4 @@
+
 function showPage() {
   const hash = window.location.hash || "#home";
   const pageId = hash.substring(1);
@@ -17,7 +18,6 @@ function showPage() {
     window.scrollTo({ top: 0, behavior: "auto" });
   }
 
-  // Load blogs when blog page is shown
   if (pageId === "blog" && typeof db !== 'undefined' && db) {
     loadBlogs();
   }
@@ -36,14 +36,17 @@ if (loginForm) {
     const passwordInput = document.getElementById("loginPassword");
     const email = emailInput ? emailInput.value.trim() : "";
     const password = passwordInput ? passwordInput.value : "";
-
-    if (!email || !password) {
-      return;
-    }
-
+   
     try {
-      await auth.signInWithEmailAndPassword(email, password);
-      window.location.href = "admin.html";
+      const userCredential = await auth.signInWithEmailAndPassword(email, password);
+      const token = await userCredential.user.getIdTokenResult(true);
+
+      if (token.claims.admin === true) {
+        window.location.href = "admin.html";
+      } else {
+        alert("This account is not an admin.");
+        window.location.href = "index.html#home";
+      }
     } catch (error) {
       alert(error.message || "Login failed. Please check your email and password.");
     }
@@ -65,6 +68,7 @@ if (signupForm) {
     const password = passwordInput ? passwordInput.value : "";
 
     if (!name || !email || !password) {
+      alert("Please fill in all fields.");
       return;
     }
 
@@ -76,7 +80,8 @@ if (signupForm) {
       }
 
       alert("Account created successfully!");
-      window.location.href = "admin.html";
+      window.location.href = "index.html#home";
+     
     } catch (error) {
       alert(error.message || "Unable to create account.");
     }
@@ -95,7 +100,7 @@ if (calculatorButton && loanInput && calculatorResult) {
     calculatorResult.textContent = `$${monthlyPayment.toLocaleString()} / month`;
   });
 }
-// Contact Form Handling
+
 const contactForm = document.getElementById("contactForm");
 if (contactForm) {
   contactForm.addEventListener("submit", async function (event) {
@@ -129,12 +134,10 @@ if (contactForm) {
   });
 }
 
-// Dynamic Blog Loading from Firebase
 async function loadBlogs() {
   const blogGrid = document.getElementById("dynamicBlogGrid");
   if (!blogGrid) return;
 
-  // Check if Firebase is initialized
   if (typeof db === 'undefined' || !db) {
     console.log("Firebase not yet initialized");
     return;
@@ -181,8 +184,58 @@ function escapeHtml(value) {
     .replace(/'/g, "&#039;");
 }
 
-// Load blogs when page is loaded
 window.addEventListener("load", () => {
-  // Wait a bit for Firebase to initialize
   setTimeout(loadBlogs, 500);
 });
+
+
+const googleProvider = new firebase.auth.GoogleAuthProvider();
+const githubProvider = new firebase.auth.GithubAuthProvider();
+
+async function loginWithGoogle() {
+  try {
+    const result = await firebase.auth().signInWithPopup(googleProvider);
+    console.log("Google login successful:", result.user.email);
+    window.location.hash = "#home";
+  } catch (error) {
+    console.error("Google login error:", error.code, error.message);
+    alert("Google login failed: " + error.code);
+  }
+}
+
+async function loginWithGitHub() {
+  try {
+    const result = await firebase.auth().signInWithPopup(githubProvider);
+    console.log("GitHub login successful:", result.user.email);
+    window.location.hash = "#home";
+  } catch (error) {
+    console.error("GitHub login error:", error.code, error.message);
+    alert("GitHub login failed: " + error.code);
+  }
+}
+
+const socialButtons = document.querySelectorAll(".social-login button");
+
+if (socialButtons[0]) {
+  socialButtons[0].addEventListener("click", loginWithGoogle);
+}
+if (socialButtons[0]) {
+  socialButtons[0].addEventListener("click", (event) => {
+
+  });
+}
+
+
+async function loginWithGoogle() {
+  try {
+    const result = await firebase.auth().signInWithPopup(googleProvider);
+    console.log("Google login successful:", result.user.email);
+    window.location.hash = "#home";
+  } catch (error) {
+    console.error("Google login error:", error.code, error.message);
+    alert("Google login failed: " + error.code);
+  }
+}
+
+document.querySelectorAll(".social-login button")[0]
+  ?.addEventListener("click", loginWithGoogle);
