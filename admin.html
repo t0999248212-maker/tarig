@@ -41,6 +41,15 @@
         <div class="header-badge">Portfolio control center</div>
       </header>
 
+      <!-- Debug panel: visible only when visiting admin.html?debug=true -->
+      <div id="adminDebug" style="display:none; padding:12px; margin:12px; background:#fff8e1; border:1px solid #f0c36d; border-radius:6px; font-family:monospace; white-space:pre-wrap; max-height:300px; overflow:auto;">
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+          <strong>Auth debug</strong>
+          <button id="adminDebugClose" style="background:#7b61ff;color:white;border:none;padding:4px 8px;border-radius:6px;cursor:pointer;">Close</button>
+        </div>
+        <div id="adminDebugContent" style="margin-top:8px; font-size:13px; color:#111"></div>
+      </div>
+
       <section id="overview" class="stats-grid">
         <div class="stat-card">
           <span>Projects</span>

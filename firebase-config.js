@@ -16,3 +16,11 @@ const app = firebase.app();
 const auth = firebase.auth();
 const db = firebase.firestore();
 const analytics = firebase.analytics ? firebase.analytics() : null;
+
+// Admin emails configuration (client-side fallback).
+// Update this array to change allowed admin email(s) quickly.
+// For stronger security, set a custom claim `admin: true` for admin users
+// in the Firebase Console using the Admin SDK instead of relying on this list.
+window.ADMIN_EMAILS = window.ADMIN_EMAILS || [
+  "Tarighitblh@email.com"
+];

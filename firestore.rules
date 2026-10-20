@@ -1,21 +1,36 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    // Helper to check admin. Prefer custom claim `admin == true` but fall
+    // back to checking the authenticated user's email against a small
+    // allow-list. Keep this list in sync with your client config or use
+    // custom claims via the Admin SDK for production.
+    function isAdmin() {
+      // Require the `admin` custom claim set via the Admin SDK.
+      return request.auth != null && request.auth.token.admin == true;
+    }
+
     match /projects/{projectId} {
+      // Projects are public for reading (used by the public site).
       allow read: if true;
-      allow create, update, delete: if request.auth != null;
+      // Only admins can create/update/delete projects.
+      allow create, update, delete: if isAdmin();
     }
 
     match /blogPosts/{postId} {
+      // Blog posts are public for reading.
       allow read: if true;
-      allow create, update, delete: if request.auth != null;
+      // Only admins can create/update/delete blog posts.
+      allow create, update, delete: if isAdmin();
     }
 
     match /messages/{messageId} {
+      // Anyone can create a message with the required fields.
       allow create: if request.resource.data.name is string
         && request.resource.data.email is string
         && request.resource.data.text is string;
-      allow read, update, delete: if request.auth != null;
+      // Only admins may read or modify messages.
+      allow read, update, delete: if isAdmin();
     }
   }
 }
